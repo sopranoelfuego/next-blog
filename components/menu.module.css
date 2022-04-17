@@ -1,0 +1,13 @@
+.container {
+}
+
+.menu {
+ list-style: none;
+ border: 1px solid grey;
+ padding: 5px;
+ display: flex;
+}
+
+.menu li {
+ margin: 0 10px;
+}
