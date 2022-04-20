@@ -7,14 +7,14 @@ function Menu() {
     <div className={menuCss.container}>
         <ul className={menuCss.menu}>
           <li>
-            <Link href="/products">
-              products
+            <Link href="/posts">
+              Posts
             </Link>
 
           </li>
           <li>
-            <Link href="/products/[category]" as={`/products/somecategory`}>
-              category product
+            <Link href="/posts/[category]" as={`/posts/somecategory`}>
+              category post
             </Link>
           </li>
           <li>

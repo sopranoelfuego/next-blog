@@ -1,8 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
 import mysql from 'serverless-mysql'
-type Data = {
- name: string
-}
+
 const db = mysql({
  config: {
   host: process.env.MYSQL_HOST,
@@ -13,9 +10,4 @@ const db = mysql({
  },
 })
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
- const posts = await db.query('select * from Post ')
-
- db.end()
- res.json(posts)
-}
+export default db
