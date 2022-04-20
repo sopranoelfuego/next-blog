@@ -17,6 +17,12 @@ function Menu() {
               category product
             </Link>
           </li>
+          <li>
+            <Link href="/api/post">
+              Post api
+
+            </Link>
+          </li>
         </ul>
     </div>
   )
