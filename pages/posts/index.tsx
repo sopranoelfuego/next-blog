@@ -2,15 +2,15 @@ import { InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
 import Layout from '../../components/Layout'
-import { IPost } from '../../lib/types'
+import { loadPosts } from '../../lib/loadPosts'
 
-function index() {
+function index(props:InferGetStaticPropsType<typeof getStaticProps>) {
     const router = useRouter()
 
   return (
       <Layout>
     <div>Post index</div>
-      
+        <ul>{props.posts.map(p=>(<li key={p.id}>{p.title}</li>))}</ul>
         <button onClick={()=>router.push('/')}>back home</button>
 
       </Layout>
@@ -20,8 +20,6 @@ function index() {
 export default index
 
 export const getStaticProps=async ()=>{
-  const result=await fetch(`http://localhost:3000/posts`)
-  const posts:IPost[]= await result.json()
-  console.log("posts here",posts)
+    const posts= await loadPosts()
   return {props:{posts}}
 }

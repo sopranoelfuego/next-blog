@@ -1,8 +1,9 @@
-import type { NextPage } from 'next'
+import type { InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import { loadPosts } from '../lib/loadPosts'
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <Layout >
       <Head>
@@ -11,10 +12,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head> 
       <h1>Welcome to the layout component...</h1>
-
+         <h2>TIMESTAMP:{Date.now()}</h2>
 
     </Layout>
   )
 }
 
 export default Home
+

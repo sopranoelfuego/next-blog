@@ -6,7 +6,7 @@ type Data = {
 }
 export default async (req: NextApiRequest, res: NextApiResponse) => {
  if (req.method === 'GET') {
-  const posts = await db.query('select * from Post ')
+  const posts = await db.query('select * from Post order by id desc')
 
   db.end()
   res.json(posts)
