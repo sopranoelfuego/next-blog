@@ -1,4 +1,5 @@
 import mysql from 'serverless-mysql'
+import { IPost } from './types'
 
 const db = mysql({
  config: {
@@ -11,3 +12,12 @@ const db = mysql({
 })
 
 export default db
+// USING APPROACH OF QUERY DATA DIRECTLY FROM DATABASE NOT USING ANY API...
+export const loadData = async (table: string, id?: number) => {
+ const data = id
+  ? await db.query<IPost[]>(`select * from ${table} where id=?`, [id])
+  : await db.query<IPost[]>(`select * from ${table} order by id desc`)
+ db.end()
+
+ return data.map(({ id, title, content }) => ({ id, title, content }))
+}

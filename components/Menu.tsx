@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import menuCss from "./menu.module.css"
+import menuCss from "../styles/menu.module.css"
 
 function Menu() {
   return (
@@ -12,11 +12,11 @@ function Menu() {
             </Link>
 
           </li>
-          <li>
-            <Link href="/posts/[category]" as={`/posts/somecategory`}>
-              category post
-            </Link>
-          </li>
+           <li>
+             <Link href='/posts/create-post'>
+               Create Post
+             </Link>
+           </li>
           <li>
             <Link href="/api/post">
               Post api

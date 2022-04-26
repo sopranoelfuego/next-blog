@@ -1,6 +1,7 @@
 import React from 'react'
 import Menu from './Menu'
-import layoutCss from './layout.module.css'
+import layoutCss from '../styles/layout.module.css'
+import Footer from './Footer'
 
 const Layout:React.FC = ({children}) => {
   return (
@@ -10,6 +11,7 @@ const Layout:React.FC = ({children}) => {
         <Menu/>
         {children}
         </div>
+        <footer><Footer/></footer>
     </div>
   )
 }

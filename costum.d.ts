@@ -5,7 +5,7 @@ declare namespace NodeJS {
   MYSQL_USER: string
   MYSQL_PASSWORD: string
   MYSQL_DATABASE: string
-  PUBLIC_API_URL: string
+  NEXT_PUBLIC_API_URL: string
   MYSQL_PORT: string
  }
 }

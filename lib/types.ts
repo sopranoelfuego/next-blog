@@ -3,3 +3,8 @@ export interface IPost {
  title: string
  content: string
 }
+
+export interface IPostResponse {
+ success: boolean
+ data: IPost[]
+}

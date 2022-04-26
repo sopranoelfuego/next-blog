@@ -12,7 +12,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.json(posts)
  } else if (req.method === 'POST') {
   let qry = 'insert into Post set ?'
-  const createdPost = await db.query<mysql.OkPacket>(qry, [req.body])
+  console.log('req.body here', req.body)
+  const createdPost = await db.query<mysql.OkPacket>(qry, [
+   JSON.parse(req.body),
+  ])
   db.end()
   if (createdPost.insertId <= 0)
    res.json({ id: null, message: 'error post not created...' })
