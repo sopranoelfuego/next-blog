@@ -1,9 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import db from '../../../lib/db'
 import mysql from 'mysql'
-type Data = {
- name: string
-}
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
  if (req.method === 'GET') {
   const posts = await db.query('select * from Post order by id desc')

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { SubmitHandler, useForm } from "react-hook-form"
@@ -21,6 +22,9 @@ function createPostPage() {
     }
   return (
       <Layout>
+          <Head>
+              create-post
+          </Head>
          <div className={createPostCss.container}>
           <div>createPostPage</div>
           <div className={createPostCss.formWrapper}>
