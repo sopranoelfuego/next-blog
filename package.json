@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
     "fs": "*",
     "net": "^1.0.2",
     "next": "12.1.5",
